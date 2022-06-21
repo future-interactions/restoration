@@ -1,7 +1,7 @@
 let oldImgSource, newImgSource, oldImg, newImg;
 var colList = [];
-var cols = 30;
-var rows = 30;
+var cols = 50;
+var rows = 50;
 var clicks = 0;
 let px, py;
 let sampleList = [23, 25, 90];
@@ -53,7 +53,7 @@ function draw() {
 			console.log(d)
 			newImg.noStroke();
 			let currentCol = color(colList[i][j]);
-			currentCol.setAlpha(255 - (d*25));
+			currentCol.setAlpha(255 - (d*15));
 			newImg.fill(currentCol);
 			newImg.rect(px + i - cols / 2, py + j - rows / 2, 1, 1);
 		}
