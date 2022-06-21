@@ -19,10 +19,12 @@ function setup() {
 	//newImg.copy(newImgSource, 0, 0, newImgSource.width, newImgSource.height, 0, 0, newImg.width, newImg.height);
 	colList = make2DArray(cols, rows);
 
-	image(oldImgSource, width/2-oldImgSource.width/2,height/2-oldImgSource.height/2);
 }
 
 function draw() {
+	background(220,220,205);
+	image(oldImgSource, width/2-oldImgSource.width/2,height/2-oldImgSource.height/2);
+
 	px = mouseX-width/2+oldImgSource.width/2;
 	py = mouseY-height/2+oldImgSource.height/2;
 	for (let i = 0; i < cols; i++) {
@@ -67,4 +69,8 @@ function mousePressed() {
 	console.log("px = " + px);
 	console.log(colList);
 	console.log(sampleList);
+}
+
+function touchMoved(){
+  return false;
 }
