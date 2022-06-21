@@ -49,11 +49,11 @@ function draw() {
 	if (moved=true){
 	for (let i = 0; i < cols; i++) {
 		for (let j = 0; j < cols; j++) {
-			let d = dist(i-cols/2, j-rows/2, px, py);
+			let d = dist(px+i-cols/2, py+j-rows/2, px, py);
 			console.log(d)
 			newImg.noStroke();
 			let currentCol = color(colList[i][j]);
-			currentCol.setAlpha(255 - (d/2.25));
+			currentCol.setAlpha(255 - (d*25));
 			newImg.fill(currentCol);
 			newImg.rect(px + i - cols / 2, py + j - rows / 2, 1, 1);
 		}
