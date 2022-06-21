@@ -18,12 +18,13 @@ function setup() {
 	newImg = createGraphics(811, 786);
 	//newImg.copy(newImgSource, 0, 0, newImgSource.width, newImgSource.height, 0, 0, newImg.width, newImg.height);
 	colList = make2DArray(cols, rows);
-	image(oldImgSource, 0,0);
+
+	image(oldImgSource, width/2-oldImgSource.width/2,height/2-oldImgSource.height/2);
 }
 
 function draw() {
-	px = mouseX;
-	py = mouseY;
+	px = mouseX-width/2+oldImgSource.width/2;
+	py = mouseY-height/2+oldImgSource.height/2;
 	for (let i = 0; i < cols; i++) {
 			for (let j = 0; j < rows; j++) {
 
@@ -49,6 +50,7 @@ function draw() {
 		newImg.rect(px+i-cols/2, py+j-rows/2, 1, 1);
 	}
 }
+translate(width/2-oldImgSource.width/2,height/2-oldImgSource.height/2)
 	image(newImg, 0, 0);
 }
 
