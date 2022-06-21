@@ -48,7 +48,9 @@ function draw() {
 	for (let i = 0; i < cols; i++) {
 		for (let j = 0; j < cols; j++) {
 		newImg.noStroke();
-		newImg.fill(colList[i][j]);
+		let currentCol=color(colList[i][j]);
+		currentCol.setAlpha(20);
+		newImg.fill(currentCol);
 		newImg.rect(px+i-cols/2, py+j-rows/2, 1, 1);
 	}
 }
